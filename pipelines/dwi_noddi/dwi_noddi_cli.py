@@ -1,12 +1,5 @@
 # coding: utf8
 
-__author__ = "Junhao Wen"
-__copyright__ = "Copyright 2016-2019, The Aramis Lab Team"
-__license__ = "See LICENSE.txt file"
-__version__ = "0.1.0"
-__email__ = "Junhao.Wen@inria.fr"
-__status__ = "Development"
-
 import clinica.engine as ce
 
 
@@ -51,17 +44,33 @@ class DwiNoddiCLI(ce.CmdParser):
     def run_command(self, args):
         """
         """
-
+        import os
         from tempfile import mkdtemp
-        from clinica.pipelines.dwi_processing_noddi.dwi_processing_noddi_pipeline import DwiProcessingNoddi
+        from clinica.utils.stream import cprint
+        from clinica.pipelines.dwi_noddi.dwi_noddi_pipeline import DwiNoddi
 
-        pipeline = DwiProcessingNoddi(
+        pipeline = DwiNoddi(
             caps_directory=self.absolute_path(args.caps_directory),
-            tsv_file=self.absolute_path(args.subjects_sessions_tsv))
+            tsv_file=self.absolute_path(args.subjects_sessions_tsv)
+        )
 
-        from clinica.utils.check_dependency import check_noddi_matlab_toolbox, check_nifti_matlib_toolbox
-        noddi_matlab_toolbox = check_noddi_matlab_toolbox()
-        nifti_matlib_toolbox = check_nifti_matlib_toolbox()
+        # Check NODDI Matlab toolbox:
+        try:
+            noddi_matlab_toolbox = os.environ.get('NODDI_MATLAB_TOOLBOX', '')
+            if not noddi_matlab_toolbox:
+                raise RuntimeError('NODDI_MATLAB_TOOLBOX variable is not set')
+        except Exception as e:
+            cprint(str(e))
+        cprint('NODDI Matlab toolbox has been detected')
+
+        # Check Niftimatlib toolbox.
+        try:
+            nifti_matlib_toolbox = os.environ.get('NIFTI_MATLIB_TOOLBOX', '')
+            if not nifti_matlib_toolbox:
+                raise RuntimeError('NIFTI_MATLIB_TOOLBOX variable is not set')
+        except Exception as e:
+            cprint(str(e))
+        cprint('Niftimatlib toolbox has been detected')
 
         pipeline.parameters = {
             'bvalue_str': dict([

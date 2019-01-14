@@ -1,5 +1,5 @@
 {
-    "id": "aramislab/dwi-preprocessing-noddi",
+    "id": "aramislab/dwi-preprocessing-multi-shell",
     "author": "Junhao Wen",
     "version": "0.1.0",
     "dependencies": [

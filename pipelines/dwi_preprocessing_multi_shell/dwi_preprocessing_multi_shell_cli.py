@@ -1,25 +1,18 @@
 # coding: utf8
 
-__author__ = "Junhao Wen"
-__copyright__ = "Copyright 2016-2019, The Aramis Lab Team"
-__license__ = "See LICENSE.txt file"
-__version__ = "0.1.0"
-__email__ = "Junhao.Wen@inria.fr"
-__status__ = "Development"
-
 import clinica.engine as ce
 
 
-class DwiPreprocessingNoddiCLI(ce.CmdParser):
+class DwiPreprocessingMultiShellCLI(ce.CmdParser):
 
     def __init__(self):
-        super(DwiPreprocessingNoddiCLI, self).__init__()
+        super(DwiPreprocessingMultiShellCLI, self).__init__()
 
     def define_name(self):
         """Define the sub-command name to run this pipeline.
         """
 
-        self._name = 'dwi-preprocessing-noddi'
+        self._name = 'dwi-preprocessing-multi-shell'
 
     def define_description(self):
         """Define a description of this pipeline.
@@ -32,7 +25,6 @@ class DwiPreprocessingNoddiCLI(ce.CmdParser):
     def define_options(self):
         """Define the sub-command arguments
         """
-
         from clinica.engine.cmdparser import PIPELINE_CATEGORIES
 
         clinica_comp = self._args.add_argument_group(PIPELINE_CATEGORIES['CLINICA_COMPULSORY'])
@@ -65,7 +57,7 @@ class DwiPreprocessingNoddiCLI(ce.CmdParser):
         """
 
         from tempfile import mkdtemp
-        from clinica.pipelines.dwi_preprocessing_noddi.dwi_preprocessing_noddi_pipeline import DwiPreprocessingNoddi
+        from clinica.pipelines.dwi_preprocessing_multi_shell.dwi_preprocessing_multi_shell_pipeline import DwiPreprocessingMultiShell
         import os
         import errno
         from clinica.iotools.utils.data_handling import create_subs_sess_list

@@ -1,12 +1,5 @@
 # coding: utf8
 
-__author__ = "Junhao Wen"
-__copyright__ = "Copyright 2016-2019, The Aramis Lab Team"
-__license__ = "See LICENSE.txt file"
-__version__ = "0.1.0"
-__email__ = "Junhao.Wen@inria.fr"
-__status__ = "Development"
-
 from nipype.interfaces import utility as niu
 from nipype.interfaces import fsl
 from nipype.pipeline import engine as pe

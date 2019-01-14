@@ -1,5 +1,12 @@
 # coding: utf8
 
+__author__ = "Junhao Wen"
+__copyright__ = "Copyright 2016-2019, The Aramis Lab Team"
+__license__ = "See LICENSE.txt file"
+__version__ = "0.1.0"
+__email__ = "Junhao.Wen@inria.fr"
+__status__ = "Development"
+
 # WARNING: Don't put any import statement here except if it's absolutly
 # necessary. Put it *inside* the different methods.
 # Otherwise it will slow down the dynamic loading of the pipelines list by the
@@ -14,9 +21,7 @@ class DwiNoddi(cpe.Pipeline):
     def check_custom_dependencies(self):
         """Check dependencies that can not be listed in the `info.json` file.
         """
-        from clinica.utils.check_dependency import check_noddi_matlab_toolbox, check_nifti_matlib_toolbox
-        _ = check_noddi_matlab_toolbox()
-        _ = check_nifti_matlib_toolbox()
+        pass
 
     def get_input_fields(self):
         """Specify the list of possible inputs of this pipeline.
@@ -32,7 +37,7 @@ class DwiNoddi(cpe.Pipeline):
                 'noddi_preprocessed_mask',
                 'n_procs',
                 'noddi_toolbox_dir',
-                'nifti_matlib_dir']  # Fill here the list
+                'nifti_matlib_dir']
 
     def get_output_fields(self):
         """Specify the list of possible outputs of this pipeline.
@@ -41,7 +46,7 @@ class DwiNoddi(cpe.Pipeline):
             A list of (string) output fields name.
         """
 
-        return ['fit_icvf', 'fit_isovf', 'fit_od']  # Fill here the list
+        return ['fit_icvf', 'fit_isovf', 'fit_od']
 
     def build_input_node(self):
         """Build and connect an input node to the pipeline.
