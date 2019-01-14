@@ -1,0 +1,31 @@
+# Python and system files
+build/
+dist/
+Clinica.egg-info
+*egg-info
+*.log
+*.lock
+*.pyc
+*.o
+*.lib
+*.sys
+*.so
+.DS_Store
+
+
+# Editor's files
+.idea
+.vscode
+
+# Code coverage and crash log files
+.coverage
+crash*
+
+# Clinica specific files
+
+
+# Pytest files
+.pytest_cache/
+test/data
+
+
