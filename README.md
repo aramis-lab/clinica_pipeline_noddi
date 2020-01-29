@@ -12,7 +12,7 @@ As well as neuroimagning tools behind these pipelines.
 Original author: Junhao Wen ([@anbai106](https://github.com/anbai106/))
 
 ## How to use this repo?
-- Follow the [developper installation of Clinica](http://www.clinica.run/doc/Installation/) and install v2.X version (e.g. `git checkout v0.2.0` before `conda env create -f environment.yml`)
+- Follow the [developper installation of Clinica](http://www.clinica.run/doc/Installation/) and install v0.2.X version (e.g. `git checkout v0.2.0` before `conda env create -f environment.yml`)
 - Clone this repo
 - Create the environment variable `CLINICAPATH` like this:
 ```bash
