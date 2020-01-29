@@ -17,8 +17,7 @@ class DwiNoddiCLI(ce.CmdParser):
     def define_description(self):
         """Define a description of this pipeline.
         """
-        self._description = ('NODDI-based processing of DWI datasets:\n'
-                             'https://gitlab.icm-institute.org/aramislab/clinica_pipeline_noddi/tree/master')
+        self._description = 'NODDI-based processing of DWI datasets.'
 
     def define_options(self):
         """Define the sub-command arguments

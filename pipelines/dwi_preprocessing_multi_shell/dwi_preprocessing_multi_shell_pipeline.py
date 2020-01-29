@@ -1,28 +1,10 @@
 # coding: utf8
 
-__author__ = "Junhao Wen"
-__copyright__ = "Copyright 2016-2019, The Aramis Lab Team"
-__license__ = "See LICENSE.txt file"
-__version__ = "0.1.0"
-__email__ = "Junhao.Wen@inria.fr"
-__status__ = "Development"
-
 import clinica.pipelines.engine as cpe
 
 
 class DwiPreprocessingMultiShell(cpe.Pipeline):
-    """SHORT DESCRIPTION.
-
-    Args: input_dir: A BIDS directory.  output_dir: An empty output directory
-    where CAPS structured data will be written.  subjects_sessions_list: The
-    Subjects-Sessions list file (in .tsv format).
-
-    Returns:
-        A clinica pipeline object containing the dwi_preprocessing_multi_shell
-        pipeline.
-
-    Raises:
-    """
+    """Preprocessing for multi-shell data."""
 
     def check_custom_dependencies(self):
         """Check dependencies that can not be listed in the `info.json` file.

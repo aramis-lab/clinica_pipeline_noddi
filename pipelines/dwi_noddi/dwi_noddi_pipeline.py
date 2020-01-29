@@ -1,22 +1,10 @@
 # coding: utf8
 
-__author__ = "Junhao Wen"
-__copyright__ = "Copyright 2016-2019, The Aramis Lab Team"
-__license__ = "See LICENSE.txt file"
-__version__ = "0.1.0"
-__email__ = "Junhao.Wen@inria.fr"
-__status__ = "Development"
-
-# WARNING: Don't put any import statement here except if it's absolutly
-# necessary. Put it *inside* the different methods.
-# Otherwise it will slow down the dynamic loading of the pipelines list by the
-# command line tool.
 import clinica.pipelines.engine as cpe
 
 
 class DwiNoddi(cpe.Pipeline):
-    """
-    """
+    """NODDI model for corrected DWI datasets."""
 
     def check_custom_dependencies(self):
         """Check dependencies that can not be listed in the `info.json` file.

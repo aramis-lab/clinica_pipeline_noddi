@@ -19,8 +19,7 @@ class DwiPreprocessingMultiShellCLI(ce.CmdParser):
         """
         self._description = ('Preprocessing of raw DWI datasets with '
                              'multi-shell acquisitions and opposite phase '
-                             'encoding directions:\n'
-                             'https://gitlab.icm-institute.org/aramislab/clinica_pipeline_noddi/tree/master')
+                             'encoding directions.')
 
     def define_options(self):
         """Define the sub-command arguments
